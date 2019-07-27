@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelecomCustomersAPI", "TelecomCustomersAPI.csproj", "{1FC1A0C3-0CF7-4EE1-AEAA-82499AA99C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelecomDataServices", "..\TelecomDataServices\TelecomDataServices.csproj", "{E15725D7-5951-4B59-9E34-C5994A3B1DCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FC1A0C3-0CF7-4EE1-AEAA-82499AA99C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FC1A0C3-0CF7-4EE1-AEAA-82499AA99C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FC1A0C3-0CF7-4EE1-AEAA-82499AA99C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FC1A0C3-0CF7-4EE1-AEAA-82499AA99C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E15725D7-5951-4B59-9E34-C5994A3B1DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E15725D7-5951-4B59-9E34-C5994A3B1DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E15725D7-5951-4B59-9E34-C5994A3B1DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E15725D7-5951-4B59-9E34-C5994A3B1DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09044493-217E-4551-B671-9E40AC4BA040}
+	EndGlobalSection
+EndGlobal
