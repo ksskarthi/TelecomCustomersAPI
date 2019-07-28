@@ -10,8 +10,8 @@ using TelecomCustomersAPI.Classes;
 
 namespace TelecomDataServices.Controllers
 {
-    public class CustomersController : ApiController
-    {
+	public class CustomersController : ApiController
+	{
 		private static SqlCredentials _credentials = HelperClass.GetSQLCredentials();
 
 		private static TelecomDBServices _telecomDBServices = new TelecomDBServices(HelperClass.GetConfigurationStringData("ConnectionString"));
@@ -30,27 +30,39 @@ namespace TelecomDataServices.Controllers
 		}
 
 		[HttpGet]
-		public List<Customer> GetCustomers()
+		public HttpResponseMessage GetCustomers()
 		{
-			return _telecomDBServices.GetAllCustomers();
+			var customers = _telecomDBServices.GetAllCustomers();
+			if (customers != null)
+				return Request.CreateResponse(HttpStatusCode.OK, customers);
+			return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Customer data is empty.");
 		}
 
 		[HttpGet]
-		public Customer GetCustomer(int CustomerId)
+		public HttpResponseMessage GetCustomer(int CustomerId)
 		{
-			return _telecomDBServices.GetCustomer(CustomerId);
+			var customer = _telecomDBServices.GetCustomer(CustomerId);
+			if (customer != null)
+				return Request.CreateResponse(HttpStatusCode.OK, customer);
+			return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Customer data is empty.");
 		}
 
 		[HttpGet]
-		public Customer AddCutomerPhoneNumber(int CustomerId, string PhoneNumber, bool Active)
+		public HttpResponseMessage AddCutomerPhoneNumber(int CustomerId, string PhoneNumber, bool Active)
 		{
-			return _telecomDBServices.AddCutomerPhoneNumber(CustomerId, PhoneNumber, Active);
+			var customer = _telecomDBServices.AddCutomerPhoneNumber(CustomerId, PhoneNumber, Active);
+			if (customer != null)
+				return Request.CreateResponse(HttpStatusCode.OK, customer);
+			return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Customer data is empty.");
 		}
 
 		[HttpGet]
-		public Customer UpdateCutomerPhoneNumber(int CustomerId, string PhoneNumber, bool Active)
+		public HttpResponseMessage UpdateCutomerPhoneNumber(int CustomerId, string PhoneNumber, bool Active)
 		{
-			return _telecomDBServices.UpdateCutomerPhoneNumber(CustomerId, PhoneNumber, Active);
+			var customer = _telecomDBServices.UpdateCutomerPhoneNumber(CustomerId, PhoneNumber, Active);
+			if (customer != null)
+				return Request.CreateResponse(HttpStatusCode.OK, customer);
+			return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Customer data is empty.");
 		}
 
 	}
